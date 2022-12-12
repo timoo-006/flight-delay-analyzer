@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Flight_delay_analyzer;
+using OpenQA.Selenium;
 
-Console.WriteLine("Hello, World!");
+FlightAware flightAware = new FlightAware("EGLL", "LSZH");
+List<IWebElement> flights = flightAware.GetFlights();

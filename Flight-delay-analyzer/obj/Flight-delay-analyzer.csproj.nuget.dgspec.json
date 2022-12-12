@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-Delay-Aalyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {}
+    "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-Delay-Aalyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {
+    "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-Delay-Aalyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+        "projectUniqueName": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
         "projectName": "Flight-delay-analyzer",
-        "projectPath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-Delay-Aalyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+        "projectPath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
         "packagesPath": "C:\\Users\\timoo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-Delay-Aalyzer\\Flight-delay-analyzer\\obj\\",
+        "outputPath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timoo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
