@@ -2,4 +2,4 @@
 using OpenQA.Selenium;
 
 FlightAware flightAware = new FlightAware("EGLL", "LSZH");
-flightAware.GetFlightData();
+flightAware.GetFlights();
