@@ -1,6 +1,9 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
+using WebDriverManager.Helpers;
 
 namespace Flight_delay_analyzer;
 
@@ -17,8 +20,15 @@ public class FlightAware
 
     public FlightAware(string originAirport, string destinationAirport)
     {
+        new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
         driver = new ChromeDriver();
+
+        // Navigate to the FlightAware website
         driver.Navigate().GoToUrl("https://de.flightaware.com/live/findflight?origin=" + originAirport + "&destination=" + destinationAirport);
+        
+        // Set the window size to square
+        driver.Manage().Window.Size = new System.Drawing.Size(1000, 1000);
+
         FilterFlights();
     }
 
@@ -37,6 +47,10 @@ public class FlightAware
             flights.Add(flightNumber);
         }
         
+        Console.WriteLine("--- Flights ---");
+        Console.Write("Total flights: " + flights.Count);
+        Console.WriteLine();
+
         // Get the delay of each flight
         foreach (String flight in flights)
         {
@@ -51,16 +65,32 @@ public class FlightAware
         // Open the flight page
         driver.Navigate().GoToUrl(flight);
         
+        // Wait for the page to load
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+        
         // Get the delay element
         String delay = driver.FindElement(By.XPath("//div[@class='flightPageDestinationDelayStatus']/span")).Text;
+        
+        // Find the flight number
+        String flightNumber = driver.FindElements(By.TagName("h1")).First().Text;
+        
+        // Cut off the brackets and the Verspätung text
+        try
+        {
+            delay = delay.Substring(1, delay.Length - 2);
+            delay = delay.Substring(0, delay.Length - 11);
+        }
+        catch (Exception e)
+        {
+            // do nothing
+        }
         
         // If the flight is delayed add it to the list
         if (delay != "(pünktlich)" && !delay.Contains("verfrüht"))
         {
-            delayedFlights.Add(flight);
-            Console.WriteLine(delay);
+            delayedFlights.Add(delay + " / " + flightNumber);
+            Console.WriteLine(delay + " / " + flightNumber);
         }
-
     }
 
     private void FilterFlights()
@@ -68,8 +98,10 @@ public class FlightAware
         // Close the Cookie popup.
         driver.FindElement(By.Id("cookieDisclaimerButtonText")).Click();
         
-        // Apply the filter for only flights that have already landed.
+        // Open the filter menu
         driver.FindElement(By.XPath("//div[@id='ffinder-refine']/form/div[2]/a")).Click();
+        
+        // Apply the filter for only flights that have already landed.
         driver.FindElement(By.XPath("//li[div/label[contains(.,'angekommen')]]/div[2]/a")).Click();
         
         // Apply the filter for only flights that have landed yesterday.

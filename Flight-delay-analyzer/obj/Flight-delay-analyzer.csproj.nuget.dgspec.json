@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {}
+    "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {
+    "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+        "projectUniqueName": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
         "projectName": "Flight-delay-analyzer",
-        "projectPath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+        "projectPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
         "packagesPath": "C:\\Users\\timoo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\obj\\",
+        "outputPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\timoo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\timoo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,6 +45,10 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[108.0.5359.7100, )"
+            },
+            "WebDriverManager": {
+              "target": "Package",
+              "version": "[2.16.2, )"
             }
           },
           "imports": [
@@ -60,12 +62,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\timoo\\.dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
