@@ -13,7 +13,7 @@ public class FlightAware
     private readonly IWebDriver _driver;
     
     // Property to get the list of delayed flights
-    public List<string> DelayedFlights { get; } = new List<string>();
+    public List<Flight> DelayedFlights { get; set; } = new();
 
     public FlightAware(string originAirport, string destinationAirport)
     {
@@ -89,8 +89,8 @@ public class FlightAware
         var flightNumber = _driver.FindElements(By.TagName("h1")).First().Text;
         
         // TODO: Remove the Console.WriteLine
-        DelayedFlights.Add(delay + " / " + flightNumber);
-        Console.WriteLine(delay + " / " + flightNumber);
+        DelayedFlights.Add(new Flight(flightNumber, delay));
+        Console.WriteLine(flightNumber + " - " + delay);
     }
 
     private void FilterFlights()

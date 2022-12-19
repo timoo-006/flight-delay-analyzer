@@ -3,3 +3,4 @@ using OpenQA.Selenium;
 
 FlightAware flightAware = new FlightAware("KLAX", "KJFK");
 flightAware.GetFlights();
+var delayedFlights = flightAware.DelayedFlights;
