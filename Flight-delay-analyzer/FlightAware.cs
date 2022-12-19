@@ -20,7 +20,12 @@ public class FlightAware
         try
         {
             new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
-            _driver = new ChromeDriver();
+            
+            // Set the language to German
+            var options = new ChromeOptions();
+            options.AddArgument("--lang=de");
+            
+            _driver = new ChromeDriver(options);
         }
         catch (Exception e)
         {

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight-delay-analyzer", "Flight-delay-analyzer\Flight-delay-analyzer.csproj", "{6D496880-BDB9-4087-9262-6224A1908BF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight-delay-analyzer-Tests", "Flight-delay-analyzer-Tests\Flight-delay-analyzer-Tests.csproj", "{9264AB2C-B045-4EE2-8DED-50ED56F5BE46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{6D496880-BDB9-4087-9262-6224A1908BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D496880-BDB9-4087-9262-6224A1908BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D496880-BDB9-4087-9262-6224A1908BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9264AB2C-B045-4EE2-8DED-50ED56F5BE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9264AB2C-B045-4EE2-8DED-50ED56F5BE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9264AB2C-B045-4EE2-8DED-50ED56F5BE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9264AB2C-B045-4EE2-8DED-50ED56F5BE46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
