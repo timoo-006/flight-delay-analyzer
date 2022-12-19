@@ -43,3 +43,6 @@ C:\Users\timoo\RiderProjects\flight-delay-analyzer\Flight-delay-analyzer\obj\Deb
 C:\Users\timoo\RiderProjects\flight-delay-analyzer\Flight-delay-analyzer\bin\Debug\net6.0\AngleSharp.dll
 C:\Users\timoo\RiderProjects\flight-delay-analyzer\Flight-delay-analyzer\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
 C:\Users\timoo\RiderProjects\flight-delay-analyzer\Flight-delay-analyzer\bin\Debug\net6.0\WebDriverManager.dll
+C:\Users\timoo\OneDrive - GIBZ\INFA2a\M450\flight-delay-analyzer\Flight-delay-analyzer\bin\Debug\net6.0\AngleSharp.dll
+C:\Users\timoo\OneDrive - GIBZ\INFA2a\M450\flight-delay-analyzer\Flight-delay-analyzer\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
+C:\Users\timoo\OneDrive - GIBZ\INFA2a\M450\flight-delay-analyzer\Flight-delay-analyzer\bin\Debug\net6.0\WebDriverManager.dll

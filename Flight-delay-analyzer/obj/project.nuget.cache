@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gpMG8HLTzxCaCz/yXOQlgb/y0JFgJXhhm3TL3i3SZ5RQ1PTcHLv2PfNh89Vne5nkVQW8Xgu/jBN93K9bmXX0Tg==",
+  "dgSpecHash": "8tOIKco3zhU6/T3FqD7yUN91uG60R+E5BXPYUU1HCm/b8mgl9R8d7uf/CmZiJkEWv/QhLW9uwFJxnhRSCBG1zw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+  "projectFilePath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timoo\\.nuget\\packages\\anglesharp\\0.17.1\\anglesharp.0.17.1.nupkg.sha512",
     "C:\\Users\\timoo\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
@@ -16,11 +16,7 @@
     "C:\\Users\\timoo\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\timoo\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\timoo\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
-    "C:\\Users\\timoo\\.nuget\\packages\\webdrivermanager\\2.16.2\\webdrivermanager.2.16.2.nupkg.sha512",
-    "C:\\Users\\timoo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.12\\microsoft.netcore.app.ref.6.0.12.nupkg.sha512",
-    "C:\\Users\\timoo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.12\\microsoft.windowsdesktop.app.ref.6.0.12.nupkg.sha512",
-    "C:\\Users\\timoo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.12\\microsoft.aspnetcore.app.ref.6.0.12.nupkg.sha512",
-    "C:\\Users\\timoo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.12\\microsoft.netcore.app.host.win-x64.6.0.12.nupkg.sha512"
+    "C:\\Users\\timoo\\.nuget\\packages\\webdrivermanager\\2.16.2\\webdrivermanager.2.16.2.nupkg.sha512"
   ],
   "logs": []
 }

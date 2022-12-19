@@ -13,7 +13,7 @@ public class FlightAware
     private readonly IWebDriver _driver;
     
     // Property to get the list of delayed flights
-    public List<string> DelayedFlights { get; } = new();
+    public List<string> DelayedFlights { get; } = new List<string>();
 
     public FlightAware(string originAirport, string destinationAirport)
     {
@@ -27,7 +27,7 @@ public class FlightAware
             Console.WriteLine(
                 "There was an error with Initializing Selenium. Make Sure you have the correct Version of Chrome installed. (" +
                 e.Message + ")");
-            Environment.Exit(0);
+            return;
         }
 
         try
@@ -39,7 +39,7 @@ public class FlightAware
         catch (Exception e)
         {
             Console.WriteLine("There was an error with navigating to the FlightAware website. (" + e.Message + ")");
-            Environment.Exit(0);
+            return;
         }
 
         // Set the window size to square
@@ -87,14 +87,10 @@ public class FlightAware
 
         // Find the flight number
         var flightNumber = _driver.FindElements(By.TagName("h1")).First().Text;
-
-        // If the flight is delayed add it to the list
-        if (delay != "(pünktlich)" && !delay.Contains("verfrüht"))
-        {
-            // TODO: Remove the Console.WriteLine
-            DelayedFlights.Add(delay + " / " + flightNumber);
-            Console.WriteLine(delay + " / " + flightNumber);
-        }
+        
+        // TODO: Remove the Console.WriteLine
+        DelayedFlights.Add(delay + " / " + flightNumber);
+        Console.WriteLine(delay + " / " + flightNumber);
     }
 
     private void FilterFlights()
