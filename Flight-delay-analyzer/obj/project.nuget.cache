@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8tOIKco3zhU6/T3FqD7yUN91uG60R+E5BXPYUU1HCm/b8mgl9R8d7uf/CmZiJkEWv/QhLW9uwFJxnhRSCBG1zw==",
+  "dgSpecHash": "x1T4SN9nO6vSPkQN2etFxq5XebNdK5rUs47L53mi11yMNMZv6LTuhLcv3I+JBJ50K+bBb7MzXYmAUutLW3ZN7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\timoo\\OneDrive - GIBZ\\INFA2a\\M450\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+  "projectFilePath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timoo\\.nuget\\packages\\anglesharp\\0.17.1\\anglesharp.0.17.1.nupkg.sha512",
     "C:\\Users\\timoo\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

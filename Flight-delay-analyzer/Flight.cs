@@ -2,8 +2,8 @@
 
 public class Flight
 {
-    public string flightNumber;
     public string delay;
+    public string flightNumber;
 
     public Flight(string flightNumber, string delay)
     {

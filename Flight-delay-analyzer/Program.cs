@@ -1,6 +1,22 @@
 ﻿using Flight_delay_analyzer;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
+using WebDriverManager.Helpers;
 
-FlightAware flightAware = new FlightAware("KLAX", "KJFK");
+var driver = CreateDriver();
+
+var flightAware = new FlightAware("EGLL", "LSZH", driver);
 flightAware.GetFlights();
-var delayedFlights = flightAware.DelayedFlights;
+
+
+IWebDriver CreateDriver()
+{
+    // Create a new instance of the chrome driver.
+    new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
+    var options = new ChromeOptions();
+    options.AddArgument("--lang=de");
+    var chromeDriver = new ChromeDriver(options);
+    return chromeDriver;
+}
