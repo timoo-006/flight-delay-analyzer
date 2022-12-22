@@ -608,11 +608,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
-      "projectName": "Flight-delay-analyzer",
-      "projectPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\Flight-delay-analyzer.csproj",
+      "projectUniqueName": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj",
+      "projectName": "Flight_delay_analyzer",
+      "projectPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj",
       "packagesPath": "C:\\Users\\timoo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight-delay-analyzer\\obj\\",
+      "outputPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timoo\\AppData\\Roaming\\NuGet\\NuGet.Config"

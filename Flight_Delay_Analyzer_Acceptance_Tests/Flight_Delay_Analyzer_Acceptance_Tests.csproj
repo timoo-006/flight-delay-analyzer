@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Flight-delay-analyzer\Flight-delay-analyzer.csproj" />
+      <ProjectReference Include="..\Flight_delay_analyzer\Flight_delay_analyzer.csproj" />
     </ItemGroup>
 
 </Project>
