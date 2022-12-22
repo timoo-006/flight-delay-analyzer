@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight-delay-analyzer", "Fl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight-Delay-Analyzer-Unit-Tests", "Flight-Delay-Analyzer-Unit-Tests\Flight-Delay-Analyzer-Unit-Tests.csproj", "{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight-Delay-Analyzer-Acceptance-Tests", "Flight-Delay-Analyzer-Acceptance-Tests\Flight-Delay-Analyzer-Acceptance-Tests.csproj", "{4B62520F-7606-46AF-957B-CEEC56BEE5E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B62520F-7606-46AF-957B-CEEC56BEE5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B62520F-7606-46AF-957B-CEEC56BEE5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B62520F-7606-46AF-957B-CEEC56BEE5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B62520F-7606-46AF-957B-CEEC56BEE5E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
