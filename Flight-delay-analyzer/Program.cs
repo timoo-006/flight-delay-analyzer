@@ -4,3 +4,5 @@ using OpenQA.Selenium;
 FlightAware flightAware = new FlightAware("KLAX", "KJFK");
 flightAware.GetFlights();
 var delayedFlights = flightAware.DelayedFlights;
+Storage storage = new();
+storage.ReadFlightsOutFromJSON();
