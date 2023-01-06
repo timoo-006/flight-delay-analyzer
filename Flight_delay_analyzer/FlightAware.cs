@@ -87,7 +87,7 @@ public class FlightAware : IFlightAware
         _driver.Navigate().GoToUrl(flight);
 
         // Wait for the page to load
-        _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(1);
+        _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
         try
         {
