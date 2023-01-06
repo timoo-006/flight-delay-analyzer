@@ -5,7 +5,12 @@
       "ProjectGuid": "6d496880-bdb9-4087-9262-6224a1908bf3",
       "DisplayName": "Flight-delay-analyzer",
       "ColorIndex": 0
+    },
+    "c6f91d71-28f4-47c1-83f3-daead52ffb0f": {
+      "ProjectGuid": "c6f91d71-28f4-47c1-83f3-daead52ffb0f",
+      "DisplayName": "Flight_Delay_Analyzer_Unit_Tests",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
