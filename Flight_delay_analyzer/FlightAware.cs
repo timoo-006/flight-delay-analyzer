@@ -82,7 +82,7 @@ public class FlightAware : IFlightAware
         _driver.Navigate().GoToUrl(flight);
 
         // Wait for the page to load
-        _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+        _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(1);
 
         // Get the delay element
         var delay = _driver.FindElement(By.XPath("//div[@class='flightPageDestinationDelayStatus']/span")).Text;
