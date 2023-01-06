@@ -43,10 +43,10 @@ public class FlightAware : IFlightAware
         }
         catch (Exception e)
         {
-            Console.WriteLine("Could not filter the flights: " + e);
-            Console.WriteLine(
-                "Please check if the origin and destination airports are correct. And if there are any flights " +
-                "available for the given airports.");
+            Console.WriteLine("\n========================================");
+            Console.WriteLine("Could not filter the flights: " + e + "\n");
+            Console.WriteLine("This might be caused by the fact that there are no flights available for the given airports.");
+            Console.WriteLine("========================================\n");
         }
 
         var flightRows = GetFlightsFromHtml();
@@ -54,7 +54,9 @@ public class FlightAware : IFlightAware
         // Check if there are any flights
         if (flightRows.Count == 0)
         {
+            Console.WriteLine("\n========================================");
             Console.WriteLine("No flights found, maybe the airport codes are wrong? Or there are no flights today?");
+            Console.WriteLine("========================================\n");
             return;
         }
 
@@ -78,17 +80,32 @@ public class FlightAware : IFlightAware
 
     public void GetFlightDelay(string flight)
     {
+        var delay = "";
+        var flightNumber = "";
+        
         // Open the flight page
         _driver.Navigate().GoToUrl(flight);
 
         // Wait for the page to load
         _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(1);
 
-        // Get the delay element
-        var delay = _driver.FindElement(By.XPath("//div[@class='flightPageDestinationDelayStatus']/span")).Text;
+        try
+        {
+            // Get the delay element
+            delay = _driver.FindElement(By.XPath("//div[@class='flightPageDestinationDelayStatus']/span")).Text;
 
-        // Find the flight number
-        var flightNumber = _driver.FindElements(By.TagName("h1")).First().Text;
+            // Find the flight number
+            flightNumber = _driver.FindElements(By.TagName("h1")).First().Text;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("\n========================================");
+            Console.WriteLine("Could not get the delay of the flight: " + flightNumber + " (" + flight + ")");
+            Console.WriteLine("Error: " + e);
+            Console.WriteLine("========================================\n");
+            
+            return;
+        }
 
         DelayedFlights.Add(new Flight(flightNumber, delay));
     }
@@ -102,10 +119,10 @@ public class FlightAware : IFlightAware
         _driver.FindElement(By.XPath("//div[@id='ffinder-refine']/form/div[2]/a")).Click();
 
         // Apply the filter for only flights that have already landed.
-        _driver.FindElement(By.XPath("//li[div/label[contains(.,'angekommen')]]/div[2]/a")).Click();
+        _driver.FindElement(By.XPath("//fieldset[@id='Status']/ul/li[div/label[contains(.,'angekommen')]]/div/a")).Click();
 
         // Apply the filter for only flights that have landed yesterday.
-        _driver.FindElements(By.XPath("//li[div/label[contains(.,'Gestern')]]/div[2]/a"))[1].Click();
+        _driver.FindElement(By.XPath("//fieldset[@id='Arrive']/ul/li[div/label[contains(.,'Gestern')]]/div/a")).Click();
     }
 
     public List<IWebElement> GetFlightsFromHtml()
