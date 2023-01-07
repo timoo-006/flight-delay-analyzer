@@ -1,4 +1,5 @@
 ﻿using Flight_delay_analyzer;
+using Flight_delay_analyzer.FlightAware;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using WebDriverManager;

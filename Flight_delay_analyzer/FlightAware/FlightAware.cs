@@ -1,8 +1,7 @@
 ﻿using System.Drawing;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
-namespace Flight_delay_analyzer;
+namespace Flight_delay_analyzer.FlightAware;
 
 public class FlightAware : IFlightAware
 {
@@ -45,7 +44,8 @@ public class FlightAware : IFlightAware
         {
             Console.WriteLine("\n========================================");
             Console.WriteLine("Could not filter the flights: " + e + "\n");
-            Console.WriteLine("This might be caused by the fact that there are no flights available for the given airports.");
+            Console.WriteLine(
+                "This might be caused by the fact that there are no flights available for the given airports.");
             Console.WriteLine("========================================\n");
         }
 
@@ -60,17 +60,7 @@ public class FlightAware : IFlightAware
             return;
         }
 
-        var flights = new List<string>();
-
-        foreach (var flightRow in flightRows)
-        {
-            List<IWebElement> flightData = flightRow.FindElements(By.TagName("td")).ToList();
-
-            // Find the elements that has a anchor tag and get the href attribute
-            var flightNumber = flightData[1].FindElement(By.TagName("a")).GetAttribute("href");
-
-            flights.Add(flightNumber);
-        }
+        var flights = flightRows.Select(flightRow => flightRow.FindElements(By.TagName("td")).ToList()).Select(flightData => flightData[1].FindElement(By.TagName("a")).GetAttribute("href")).ToList();
 
         // Get the delay of each flight
         foreach (var flight in flights) GetFlightDelay(flight);
@@ -82,7 +72,7 @@ public class FlightAware : IFlightAware
     {
         var delay = "";
         var flightNumber = "";
-        
+
         // Open the flight page
         _driver.Navigate().GoToUrl(flight);
 
@@ -103,7 +93,7 @@ public class FlightAware : IFlightAware
             Console.WriteLine("Could not get the delay of the flight: " + flightNumber + " (" + flight + ")");
             Console.WriteLine("Error: " + e);
             Console.WriteLine("========================================\n");
-            
+
             return;
         }
 
@@ -119,7 +109,8 @@ public class FlightAware : IFlightAware
         _driver.FindElement(By.XPath("//div[@id='ffinder-refine']/form/div[2]/a")).Click();
 
         // Apply the filter for only flights that have already landed.
-        _driver.FindElement(By.XPath("//fieldset[@id='Status']/ul/li[div/label[contains(.,'angekommen')]]/div/a")).Click();
+        _driver.FindElement(By.XPath("//fieldset[@id='Status']/ul/li[div/label[contains(.,'angekommen')]]/div/a"))
+            .Click();
 
         // Apply the filter for only flights that have landed yesterday.
         _driver.FindElement(By.XPath("//fieldset[@id='Arrive']/ul/li[div/label[contains(.,'Gestern')]]/div/a")).Click();

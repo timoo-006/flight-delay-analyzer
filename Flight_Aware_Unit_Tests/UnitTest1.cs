@@ -1,4 +1,5 @@
 using Flight_delay_analyzer;
+using Flight_delay_analyzer.FlightAware;
 using FluentAssertions;
 using Moq;
 using OpenQA.Selenium;
