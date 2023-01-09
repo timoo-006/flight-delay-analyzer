@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Flight_delay_analyzer;
+using Flight_delay_analyzer.FlightAware;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
@@ -34,7 +35,7 @@ public sealed class FlightAwareStepDefinitions
         var driver = CreateDriver();
         _flightAware = new FlightAware("JFK", "LAX", driver);
     }
-    
+
     IWebDriver CreateDriver()
     {
         // Create a new instance of the chrome driver.
@@ -49,7 +50,7 @@ public sealed class FlightAwareStepDefinitions
     public void WhenTheFlightsOnThisRouteAreRequested()
     {
         _flightAware.GetFlights();
-        
+
         // Check if flights were found
         if (_flightAware.DelayedFlights.Count == 0)
         {

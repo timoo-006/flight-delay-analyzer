@@ -18,12 +18,5 @@
     "C:\\Users\\Shamoun\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "C:\\Users\\Shamoun\\.nuget\\packages\\webdrivermanager\\2.16.2\\webdrivermanager.2.16.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem beim Lesen der Cachedatei \"C:\\Users\\Shamoun\\source\\repos\\AhlaAbuAntar\\flight-delay-analyzer\\Flight_delay_analyzer\\obj\\project.nuget.cache\": Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

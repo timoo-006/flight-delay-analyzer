@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_delay_analyzer", "Flight_delay_analyzer\Flight_delay_analyzer.csproj", "{6D496880-BDB9-4087-9262-6224A1908BF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Delay_Analyzer_Unit_Tests", "Flight_Delay_Analyzer_Unit_Tests\Flight_Delay_Analyzer_Unit_Tests.csproj", "{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Delay_Analyzer_Acceptance_Tests", "Flight_Delay_Analyzer_Acceptance_Tests\Flight_Delay_Analyzer_Acceptance_Tests.csproj", "{EAF03837-6317-46B5-A8DD-5B33EF28EFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Delay_Analyzer_Acceptance_Test", "Flight_Delay_Analyzer_Acceptance_Test\Flight_Delay_Analyzer_Acceptance_Test.csproj", "{DF9D9CD7-3C55-450F-ABAF-0D861378EB36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Aware_Unit_Tests", "Flight_Aware_Unit_Tests\Flight_Aware_Unit_Tests.csproj", "{A12BEFC8-342B-4EED-A468-FB737FC9D375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +16,13 @@ Global
 		{6D496880-BDB9-4087-9262-6224A1908BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D496880-BDB9-4087-9262-6224A1908BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D496880-BDB9-4087-9262-6224A1908BF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6F91D71-28F4-47C1-83F3-DAEAD52FFB0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF9D9CD7-3C55-450F-ABAF-0D861378EB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF9D9CD7-3C55-450F-ABAF-0D861378EB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF9D9CD7-3C55-450F-ABAF-0D861378EB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF9D9CD7-3C55-450F-ABAF-0D861378EB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF03837-6317-46B5-A8DD-5B33EF28EFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF03837-6317-46B5-A8DD-5B33EF28EFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF03837-6317-46B5-A8DD-5B33EF28EFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF03837-6317-46B5-A8DD-5B33EF28EFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12BEFC8-342B-4EED-A468-FB737FC9D375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12BEFC8-342B-4EED-A468-FB737FC9D375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12BEFC8-342B-4EED-A468-FB737FC9D375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12BEFC8-342B-4EED-A468-FB737FC9D375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

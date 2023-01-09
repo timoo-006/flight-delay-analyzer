@@ -41,7 +41,7 @@ namespace Flight_delay_analyzer
         public void StoreFlightsIntoJSON()
         {
             JSONItemsInput jsonObject = new();
-            FlightAware flightAware = new FlightAware(jsonObject.OriginAirport, jsonObject.DestinationAirport, FlightAware._driver);
+            FlightAware.FlightAware flightAware = new FlightAware.FlightAware(jsonObject.OriginAirport, jsonObject.DestinationAirport, FlightAware.FlightAware._driver);
             
             Console.WriteLine(flightAware.DelayedFlights);
         }
