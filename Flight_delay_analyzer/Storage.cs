@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Flight_delay_analyzer
 {
-    class JSONItemsInput
+    public class JSONInputs
     {
         public string OriginAirport { get; set; }
         public string DestinationAirport { get; set;}
@@ -25,25 +25,42 @@ namespace Flight_delay_analyzer
 
     class Storage
     {
-        public Storage()
-        {
-        }
-
-        public void ReadFlightsOutFromJSON()
+        public List<JSONInputs> ReadFlightsOutFromJSON()
         {
             // Read the readFlight JSON File
-            var json = File.ReadAllText("readFlight.json");
-            var deserializedJson = JsonConvert.DeserializeObject<JSONItemsInput>(json);
-            string originAirport = deserializedJson.OriginAirport;
-            string destinationAirport = deserializedJson.DestinationAirport;
+            try
+            {
+                var json = File.ReadAllText("readFlight.json");
+                if (json == null || json == "")
+                {
+                    throw new Exception("Couldn't read file");
+                }
+                var deserializedJson = JsonConvert.DeserializeObject<List<JSONInputs>>(json);
+                return deserializedJson;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
 
-        public void StoreFlightsIntoJSON()
+        public void StoreFlightsIntoJSON(List<Flight> delayedFlights)
         {
-            JSONItemsInput jsonObject = new();
-            FlightAware.FlightAware flightAware = new FlightAware.FlightAware(jsonObject.OriginAirport, jsonObject.DestinationAirport, FlightAware.FlightAware._driver);
+            try
+            {
+                var delayedFlightsIntoJson = JsonConvert.SerializeObject(delayedFlights);
+                File.AppendAllText("delayedFlights.json", delayedFlightsIntoJson);
+                if (delayedFlights.Count > 0)
+                {
+                    Console.WriteLine("No delayed flights detected");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             
-            Console.WriteLine(flightAware.DelayedFlights);
         }
     }
 }

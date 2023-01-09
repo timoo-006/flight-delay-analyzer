@@ -6,7 +6,6 @@ namespace Flight_delay_analyzer.FlightAware;
 public class FlightAware : IFlightAware
 {
     public static IWebDriver _driver;
-
     public FlightAware(string originAirport, string destinationAirport, IWebDriver driver)
     {
         _driver = driver;

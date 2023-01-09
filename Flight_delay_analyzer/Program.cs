@@ -6,13 +6,17 @@ using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 
-var driver = CreateDriver();
-
-var flightAware = new FlightAware("EGLL", "LSZH", driver);
-flightAware.GetFlights();
-
 Storage storage = new Storage();
-storage.StoreFlightsIntoJSON();
+var jsonInputs =  storage.ReadFlightsOutFromJSON();
+
+foreach(var jsonInput in jsonInputs)
+{
+    var driver = CreateDriver();
+    var flightAware = new FlightAware(jsonInput.OriginAirport, jsonInput.DestinationAirport, driver);
+    flightAware.GetFlights();
+    storage.StoreFlightsIntoJSON(flightAware.DelayedFlights);
+}
+
 
 IWebDriver CreateDriver()
 {
