@@ -6,15 +6,17 @@ using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 
-Storage storage = new Storage();
-var jsonInputs =  storage.ReadFlightsOutFromJSON();
+JSONReadAndWrite storage = new JSONReadAndWrite();
+JSONInputs jsonItems = new JSONInputs();
+var jsonInputs = storage.ReadFlightsOutFromJSON(jsonItems.OriginAirport, jsonItems.DestinationAirport, jsonItems.dateOfFlight);
 
-foreach(var jsonInput in jsonInputs)
+foreach (var jsonInput in jsonInputs)
 {
     var driver = CreateDriver();
     var flightAware = new FlightAware(jsonInput.OriginAirport, jsonInput.DestinationAirport, driver);
     flightAware.GetFlights();
-    storage.StoreFlightsIntoJSON(flightAware.DelayedFlights);
+    storage.StoreFlightsIntoJSON(flightAware.FlightList);
+    storage.AnalyzeResults(flightAware.FlightList);
 }
 
 

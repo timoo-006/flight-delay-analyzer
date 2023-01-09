@@ -35,7 +35,7 @@ public class FlightAwareTests : IDisposable
         _flightAware.GetFlights();
 
         // Assert
-        _flightAware.DelayedFlights.Should().NotBeEmpty();
+        _flightAware.FlightList.Should().NotBeEmpty();
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class FlightAwareTests : IDisposable
         _flightAware.GetFlights();
 
         // Assert
-        _flightAware.DelayedFlights.Should().BeEmpty();
+        _flightAware.FlightList.Should().BeEmpty();
     }
 
     [Fact]
@@ -60,7 +60,7 @@ public class FlightAwareTests : IDisposable
 
         // Act
         _flightAware.GetFlightDelay(fakeFlight);
-        var actualDelay = _flightAware.DelayedFlights[0].delay;
+        var actualDelay = _flightAware.FlightList[0].delay;
 
         // Assert
         actualDelay.Should().Be(expectedDelay);

@@ -52,7 +52,7 @@ public sealed class FlightAwareStepDefinitions
         _flightAware.GetFlights();
 
         // Check if flights were found
-        if (_flightAware.DelayedFlights.Count == 0)
+        if (_flightAware.FlightList.Count == 0)
         {
             _wereFlightsFound = false;
         } else
@@ -68,7 +68,7 @@ public sealed class FlightAwareStepDefinitions
         if (_wereFlightsFound)
         {
             // Verify that the flights is not empty
-            Assert.NotEmpty(_flightAware.DelayedFlights);
+            Assert.NotEmpty(_flightAware.FlightList);
         }
     }
 
@@ -79,7 +79,7 @@ public sealed class FlightAwareStepDefinitions
         if (!_wereFlightsFound)
         {
             // Verify that the flights is empty
-            Assert.Empty(_flightAware.DelayedFlights);
+            Assert.Empty(_flightAware.FlightList);
         }
     }
 }

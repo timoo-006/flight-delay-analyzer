@@ -20,7 +20,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Sonstige Dateien",
       "ColorIndex": -1
+    },
+    "a12befc8-342b-4eed-a468-fb737fc9d375": {
+      "ProjectGuid": "a12befc8-342b-4eed-a468-fb737fc9d375",
+      "DisplayName": "Flight_Aware_Unit_Tests",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

@@ -4,7 +4,7 @@ namespace Flight_delay_analyzer;
 
 public interface IFlightAware
 {
-    public List<Flight> DelayedFlights { get; }
+    public List<Flight> FlightList { get; }
 
     public void GetFlights();
 

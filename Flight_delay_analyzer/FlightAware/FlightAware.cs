@@ -30,7 +30,7 @@ public class FlightAware : IFlightAware
     }
 
     // Property to get the list of delayed flights
-    public List<Flight> DelayedFlights { get; } = new();
+    public List<Flight> FlightList { get; } = new();
 
     public void GetFlights()
     {
@@ -96,7 +96,7 @@ public class FlightAware : IFlightAware
             return;
         }
 
-        DelayedFlights.Add(new Flight(flightNumber, delay));
+        FlightList.Add(new Flight(flightNumber, delay));
     }
 
     public void FilterFlights()
