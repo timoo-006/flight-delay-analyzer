@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OpenQA.Selenium;
 
 using System;
 using System.Collections.Generic;
@@ -67,7 +65,7 @@ namespace Flight_delay_analyzer
             }
         }
 
-        public void AnalyzeResults(List<Flight> flightList)
+        public void AnalyzeResults(List<Flight> flightList, string origin, string destination, DateTime dateOfFlight)
         {
          
             List<FlightsAnalyzeProperties> flightsToAnalyze = new List<FlightsAnalyzeProperties>();
@@ -75,7 +73,7 @@ namespace Flight_delay_analyzer
             foreach (Flight flight in flightList)
             {
                 FlightsAnalyzeProperties flightAnalyzeObject = new FlightsAnalyzeProperties();
-                if (flight.delay.Contains("verspätet"))
+                if (flight.delay.Contains("Verspätung"))
                 {
                     int minutesOfDelay = Convert.ToInt32(new string(flight.delay.Where(char.IsDigit).ToArray()).ToString());
                     string flightNumber = flight.flightNumber;
@@ -83,7 +81,7 @@ namespace Flight_delay_analyzer
                     flightAnalyzeObject.FlightNumber = flightNumber;
                     flightsToAnalyze.Add(flightAnalyzeObject);
                 }
-                if (flight.delay.Contains("verfrüht"))
+                else if (flight.delay.Contains("verfrüht"))
                 {
                     //Turn delay to negative number to detect if flight is too late or too early
                     int minutesOfDelay = Convert.ToInt32(new string(flight.delay.Where(char.IsDigit).ToArray()).ToString()) * -1;
@@ -104,6 +102,13 @@ namespace Flight_delay_analyzer
 
             int biggestDelay = flightsToAnalyze.Max(flight => flight.FlightDelay);
             int earliestAnticipatedFlight = flightsToAnalyze.Min(flightList => flightList.FlightDelay);
+            
+            // Log the results to the console
+            Console.WriteLine("\n=============================");
+            Console.WriteLine("Results for " + origin + " to " + destination + " on " + dateOfFlight.ToString("dd.MM.yyyy"));
+            Console.WriteLine("The biggest delay is: " + biggestDelay + " minutes");
+            Console.WriteLine("The earliest anticipated flight is: " + earliestAnticipatedFlight + " minutes");
+            Console.WriteLine("=============================");
         }
     }
 }

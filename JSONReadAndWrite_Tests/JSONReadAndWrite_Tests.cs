@@ -57,7 +57,7 @@ namespace JSONReadAndWrite_Tests
         public void JSONReadAndWrite_AnalyzeResults_GetMostDelayedFlight()
         {
             //Arrange
-            JSONReadAndWrite jSONReadAndWrite = new();
+            JSONReadAndWrite jsonReadAndWrite = new();
             List<Flight> flights = new List<Flight>();
             Flight flightDelayed = new Flight("LX375", "15 minutes verspätet");
             Flight flightPunctual = new Flight("AA421", "pünktlich");
@@ -72,7 +72,7 @@ namespace JSONReadAndWrite_Tests
                 new FlightsAnalyzeProperties(){ FlightNumber = flightAnticipated.flightNumber, FlightDelay = -15 },
             };
             //Act
-            jSONReadAndWrite.AnalyzeResults(flights);
+            jsonReadAndWrite.AnalyzeResults(flights, null, null, DateTime.Now.AddDays(-1));
             int biggestDelay = flightsToAnalyze.Max(flight => flight.FlightDelay);
             //Assert
             Assert.AreEqual(15, biggestDelay);
@@ -97,7 +97,7 @@ namespace JSONReadAndWrite_Tests
                 new FlightsAnalyzeProperties(){ FlightNumber = flightAnticipated.flightNumber, FlightDelay = -15 },
             };
             //Act
-            jSONReadAndWrite.AnalyzeResults(flights);
+            jSONReadAndWrite.AnalyzeResults(flights, null, null, DateTime.Now.AddDays(-1));
             int earliestAnticipatedFlight = flightsToAnalyze.Min(flight => flight.FlightDelay);
             //Assert
             Assert.AreEqual(-15, earliestAnticipatedFlight);
