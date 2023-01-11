@@ -12,10 +12,9 @@ using System.Threading.Tasks;
 
 namespace Flight_delay_analyzer
 {
-    
-    class JSONReadAndWrite
+    public class JSONReadAndWrite
     {
-        internal class FlightsAnalyzeProperties
+        public class FlightsAnalyzeProperties
         {
             public string FlightNumber { get; set; }
             public int FlightDelay { get; set; }
@@ -102,8 +101,8 @@ namespace Flight_delay_analyzer
                     flightsToAnalyze.Add(flightAnalyzeObject);
                 }
             }
+
             int biggestDelay = flightsToAnalyze.Max(flight => flight.FlightDelay);
-             
             int earliestAnticipatedFlight = flightsToAnalyze.Min(flightList => flightList.FlightDelay);
         }
     }

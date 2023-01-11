@@ -14,10 +14,4 @@
         <PackageReference Include="WebDriverManager" Version="2.16.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="readFlight.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>

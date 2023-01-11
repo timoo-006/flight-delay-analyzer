@@ -2,7 +2,6 @@ C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_an
 C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\selenium-manager\macos\selenium-manager
 C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\selenium-manager\windows\selenium-manager.exe
 C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\Flight_delay_analyzer.exe
-C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\readFlight.json
 C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\Flight_delay_analyzer.deps.json
 C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\Flight_delay_analyzer.runtimeconfig.json
 C:\Users\Shamoun\source\repos\AhlaAbuAntar\flight-delay-analyzer\Flight_delay_analyzer\bin\Debug\net6.0\Flight_delay_analyzer.dll
