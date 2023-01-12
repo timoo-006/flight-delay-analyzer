@@ -41,9 +41,10 @@ public static class Program
     {
         while (true)
         {
-            Console.WriteLine("\n ===================================== ");
+            Console.WriteLine("\n===================================== ");
             Console.WriteLine("A. Start the Program");
             Console.WriteLine("B. Exit the Program"); 
+            Console.WriteLine("C. Tutorial");
             Console.Write("Choose an option: ");
 
             string? option = Console.ReadLine()?.ToUpper();
@@ -57,6 +58,20 @@ public static class Program
                 case "B":
                     Console.WriteLine("Exiting the Program...");
                     Environment.Exit(0);
+                    break;
+                case "C":
+                    Console.WriteLine("============= Tutorial =============");
+                    Console.WriteLine("1. Create a JSON file (readFlight.json) in the bin/Debug/net6.0 folder with the following structure:");
+                    Console.WriteLine("[");
+                    Console.WriteLine("  {");
+                    Console.WriteLine("    \"OriginAirport\": \"MUC\",");
+                    Console.WriteLine("    \"DestinationAirport\": \"LHR\",");
+                    Console.WriteLine("  }");
+                    Console.WriteLine("] (You can add as many routes as you want)");
+                    Console.WriteLine("2. Run the program");
+                    Console.WriteLine("3. The program will create a JSON file (delayedFlights.json) with the results (also in the bin/Debug/net6.0 folder)");
+                    Console.WriteLine("4. The program will also output the highest delay and the lowest delay to the console");
+                    Console.WriteLine("=====================================");
                     break;
                 default:
                     Console.WriteLine("Invalid option");
