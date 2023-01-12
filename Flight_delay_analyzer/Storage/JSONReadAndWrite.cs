@@ -1,14 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Flight_delay_analyzer.FlightAware;
+using Newtonsoft.Json;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace Flight_delay_analyzer
+namespace Flight_delay_analyzer.Storage
 {
     public class JSONReadAndWrite
     {

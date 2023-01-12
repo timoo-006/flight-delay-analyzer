@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shamoun\\source\\repos\\AhlaAbuAntar\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj": {}
+    "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shamoun\\source\\repos\\AhlaAbuAntar\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj": {
+    "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shamoun\\source\\repos\\AhlaAbuAntar\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj",
+        "projectUniqueName": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj",
         "projectName": "Flight_delay_analyzer",
-        "projectPath": "C:\\Users\\Shamoun\\source\\repos\\AhlaAbuAntar\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj",
-        "packagesPath": "C:\\Users\\Shamoun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shamoun\\source\\repos\\AhlaAbuAntar\\flight-delay-analyzer\\Flight_delay_analyzer\\obj\\",
+        "projectPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\Flight_delay_analyzer.csproj",
+        "packagesPath": "C:\\Users\\timoo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\timoo\\RiderProjects\\flight-delay-analyzer\\Flight_delay_analyzer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shamoun\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\timoo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

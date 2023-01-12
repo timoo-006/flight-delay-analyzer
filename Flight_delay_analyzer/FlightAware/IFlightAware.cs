@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Flight_delay_analyzer;
+namespace Flight_delay_analyzer.FlightAware;
 
 public interface IFlightAware
 {

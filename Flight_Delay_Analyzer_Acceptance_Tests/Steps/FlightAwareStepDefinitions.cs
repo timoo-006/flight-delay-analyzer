@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Flight_delay_analyzer;
-using Flight_delay_analyzer.FlightAware;
+﻿using Flight_delay_analyzer.FlightAware;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 using Xunit;
 
-namespace Flight_Delay_Analyzer_Integration_Tests.Steps;
+namespace Flight_Delay_Analyzer_Acceptance_Tests.Steps;
 
 
 [Binding]

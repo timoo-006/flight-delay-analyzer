@@ -1,4 +1,3 @@
-using Flight_delay_analyzer;
 using Flight_delay_analyzer.FlightAware;
 using FluentAssertions;
 using Moq;
@@ -8,7 +7,7 @@ using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 
-namespace Flight_Delay_Analyzer_Unit_Tests;
+namespace Flight_Aware_Unit_Tests;
 
 public class FlightAwareTests : IDisposable
 {
