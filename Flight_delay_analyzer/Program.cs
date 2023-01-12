@@ -44,7 +44,7 @@ public static class Program
             Console.WriteLine("\n===================================== ");
             Console.WriteLine("A. Start the Program");
             Console.WriteLine("B. Exit the Program"); 
-            Console.WriteLine("C. Tutorial");
+            Console.WriteLine("C. Tutorial (Please read before starting the program)");
             Console.Write("Choose an option: ");
 
             string? option = Console.ReadLine()?.ToUpper();
@@ -71,6 +71,7 @@ public static class Program
                     Console.WriteLine("2. Run the program");
                     Console.WriteLine("3. The program will create a JSON file (delayedFlights.json) with the results (also in the bin/Debug/net6.0 folder)");
                     Console.WriteLine("4. The program will also output the highest delay and the lowest delay to the console");
+                    Console.WriteLine("If you prefer to use FlightRadar (Doesn't work, because the Website is broken) over FlightAware, change the line 21 in the Program.cs. The same goes for the Unit and Acceptance Tests.");
                     Console.WriteLine("=====================================");
                     break;
                 default:
