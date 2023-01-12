@@ -1,4 +1,4 @@
-﻿namespace Flight_delay_analyzer;
+﻿namespace Flight_delay_analyzer.FlightAware;
 
 public class Flight
 {

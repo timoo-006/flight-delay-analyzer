@@ -1,6 +1,7 @@
 using Flight_delay_analyzer;
-
-using static Flight_delay_analyzer.JSONReadAndWrite;
+using Flight_delay_analyzer.FlightAware;
+using Flight_delay_analyzer.Storage;
+using static Flight_delay_analyzer.Storage.JSONReadAndWrite;
 
 namespace JSONReadAndWrite_Tests
 {
@@ -29,10 +30,10 @@ namespace JSONReadAndWrite_Tests
             //Arrange
             JSONReadAndWrite jSONReadAndWrite = new();
             List<Flight> flights = new List<Flight>();
-            Flight flight = new Flight("LX375", "5 minuten verfrüht");
+            Flight flight = new Flight("LX375", "5 minuten verfrï¿½ht");
             flights.Add(flight);
             if (File.Exists("delayedFlights.json")) File.Delete("delayedFlights.json");
-            string expectedJson = "[{\"delay\":\"5 minuten verfrüht\",\"flightNumber\":\"LX375\"}]";
+            string expectedJson = "[{\"delay\":\"5 minuten verfrï¿½ht\",\"flightNumber\":\"LX375\"}]";
             //Act
             jSONReadAndWrite.StoreFlightsIntoJSON(flights);
             string json = File.ReadAllText("delayedFlights.json");
@@ -59,9 +60,9 @@ namespace JSONReadAndWrite_Tests
             //Arrange
             JSONReadAndWrite jsonReadAndWrite = new();
             List<Flight> flights = new List<Flight>();
-            Flight flightDelayed = new Flight("LX375", "15 minutes verspätet");
-            Flight flightPunctual = new Flight("AA421", "pünktlich");
-            Flight flightAnticipated = new Flight("AE200", "15 minutes verfrüht");
+            Flight flightDelayed = new Flight("LX375", "15 minutes verspï¿½tet");
+            Flight flightPunctual = new Flight("AA421", "pï¿½nktlich");
+            Flight flightAnticipated = new Flight("AE200", "15 minutes verfrï¿½ht");
             flights.Add(flightDelayed);
             flights.Add(flightPunctual);
             flights.Add(flightAnticipated);
@@ -84,9 +85,9 @@ namespace JSONReadAndWrite_Tests
             //Arrange
             JSONReadAndWrite jSONReadAndWrite = new();
             List<Flight> flights = new List<Flight>();
-            Flight flightDelayed = new Flight("LX375", "15 minutes verspätet");
-            Flight flightPunctual = new Flight("AA421", "pünktlich");
-            Flight flightAnticipated = new Flight("AE200", "15 minutes verfrüht");
+            Flight flightDelayed = new Flight("LX375", "15 minutes verspï¿½tet");
+            Flight flightPunctual = new Flight("AA421", "pï¿½nktlich");
+            Flight flightAnticipated = new Flight("AE200", "15 minutes verfrï¿½ht");
             flights.Add(flightDelayed);
             flights.Add(flightPunctual);
             flights.Add(flightAnticipated);

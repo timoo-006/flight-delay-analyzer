@@ -1,14 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Flight_delay_analyzer.FlightAware;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace Flight_delay_analyzer
+namespace Flight_delay_analyzer.Storage
 {
     public class JSONReadAndWrite
     {
@@ -39,6 +32,7 @@ namespace Flight_delay_analyzer
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception(ex.Message);
             }
         }
@@ -67,37 +61,54 @@ namespace Flight_delay_analyzer
 
         public void AnalyzeResults(List<Flight> flightList, string origin, string destination, DateTime dateOfFlight)
         {
-         
             List<FlightsAnalyzeProperties> flightsToAnalyze = new List<FlightsAnalyzeProperties>();
-
             foreach (Flight flight in flightList)
             {
                 FlightsAnalyzeProperties flightAnalyzeObject = new FlightsAnalyzeProperties();
+                int minutesOfDelay = 0;
                 if (flight.delay.Contains("Verspätung"))
                 {
-                    int minutesOfDelay = Convert.ToInt32(new string(flight.delay.Where(char.IsDigit).ToArray()).ToString());
-                    string flightNumber = flight.flightNumber;
-                    flightAnalyzeObject.FlightDelay = minutesOfDelay;
-                    flightAnalyzeObject.FlightNumber = flightNumber;
-                    flightsToAnalyze.Add(flightAnalyzeObject);
+                    int hoursDelayIntoMinutesDelay = 0;
+                    if (flight.delay.Contains("Stunde"))
+                    {
+                        hoursDelayIntoMinutesDelay = Convert.ToInt32(new string(flight.delay.Substring(0, flight.delay.IndexOf("Stunde")).Where(x => char.IsDigit(x)).ToArray()).ToString()) * 60;
+                    }
+                    if(flight.delay.Contains("Minuten"))
+                    {
+                        if (!flight.delay.Contains("Stunde"))
+                        {
+                            minutesOfDelay = Convert.ToInt32(new string(flight.delay.Where(x => char.IsDigit(x)).ToArray()).ToString()) + hoursDelayIntoMinutesDelay;
+                        }
+                        else
+                        {
+                            minutesOfDelay = Convert.ToInt32(new string(flight.delay.Substring(flight.delay.IndexOf("Stunde")).Where(x => char.IsDigit(x)).ToArray()).ToString()) + hoursDelayIntoMinutesDelay;
+                        }
+                    }
                 }
                 else if (flight.delay.Contains("verfrüht"))
                 {
                     //Turn delay to negative number to detect if flight is too late or too early
-                    int minutesOfDelay = Convert.ToInt32(new string(flight.delay.Where(char.IsDigit).ToArray()).ToString()) * -1;
-                    string flightNumber = flight.flightNumber;
-                    flightAnalyzeObject.FlightDelay = minutesOfDelay;
-                    flightAnalyzeObject.FlightNumber = flightNumber;
-                    flightsToAnalyze.Add(flightAnalyzeObject);
+                    int hoursDelayIntoMinutesDelay = 0;
+                    if (flight.delay.Contains("Stunde"))
+                    {
+                        hoursDelayIntoMinutesDelay = Convert.ToInt32(new string(flight.delay.Substring(0, flight.delay.IndexOf("Stunde")).Where(x => char.IsDigit(x)).ToArray()).ToString()) * -60;
+                    }
+                    if (flight.delay.Contains("Minuten"))
+                    {
+                        if (!flight.delay.Contains("Stunde"))
+                        {
+                            minutesOfDelay = Convert.ToInt32(new string(flight.delay.Where(x => char.IsDigit(x)).ToArray()).ToString()) * -1 - hoursDelayIntoMinutesDelay;
+                        }
+                        else
+                        {
+                            minutesOfDelay = Convert.ToInt32(new string(flight.delay.Substring(flight.delay.IndexOf("Stunde")).Where(x => char.IsDigit(x)).ToArray()).ToString()) * -1 - hoursDelayIntoMinutesDelay;
+                        }
+                    }
                 }
-                else
-                {
-                    int minutesOfDelay = 0;
-                    string flightNumber = flight.flightNumber;
-                    flightAnalyzeObject.FlightDelay = minutesOfDelay;
-                    flightAnalyzeObject.FlightNumber = flightNumber;
-                    flightsToAnalyze.Add(flightAnalyzeObject);
-                }
+                string flightNumber = flight.flightNumber;
+                flightAnalyzeObject.FlightDelay = minutesOfDelay;
+                flightAnalyzeObject.FlightNumber = flightNumber;
+                flightsToAnalyze.Add(flightAnalyzeObject);
             }
 
             int biggestDelay = flightsToAnalyze.Max(flight => flight.FlightDelay);

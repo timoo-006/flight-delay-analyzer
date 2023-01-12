@@ -1,10 +1,11 @@
-﻿using Flight_delay_analyzer;
-using Flight_delay_analyzer.FlightAware;
+﻿using Flight_delay_analyzer.Storage;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
+
+namespace Flight_delay_analyzer;
 
 public static class Program
 {
@@ -17,7 +18,7 @@ public static class Program
         foreach (var jsonInput in jsonInputs)
         {
             var driver = CreateDriver();
-            var flightAware = new FlightAware(jsonInput.OriginAirport, jsonInput.DestinationAirport, driver);
+            var flightAware = new FlightAware.FlightAware(jsonInput.OriginAirport, jsonInput.DestinationAirport, driver);
             flightAware.GetFlights();
             storage.StoreFlightsIntoJSON(flightAware.FlightList);
             storage.AnalyzeResults(flightAware.FlightList, jsonInput.OriginAirport, jsonInput.DestinationAirport, jsonInput.dateOfFlight);
